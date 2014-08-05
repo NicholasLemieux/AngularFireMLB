@@ -1,0 +1,25 @@
+<a href="http://localhost:63342/practice2/" class="btn btn-primary">Back to People</a>
+<hr />
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th ng-click="orderByField='name'">Name</th>
+			<th ng-click="orderByField='position'">Position</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="player in players | orderBy:orderByField">
+            
+            <td><a ng-href="#/view/{{teamId}}/player/{{player._key}}"> {{player.name}}</a></td>
+            <td>{{player.position}}</td>
+		</tr>
+	</tbody>
+</table>
+
+{{auth.isAdmin}}
+
+<form ng-submit="createPlayer()" ng-show="auth.privledges.administrator">
+    <input type="text" ng-model="newPlayer.name" placeholder="Name"/>
+    <input type="text" ng-model="newPlayer.position" placeholder="Position"/>
+    <input type="submit" />
+</form>

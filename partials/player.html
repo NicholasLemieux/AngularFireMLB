@@ -1,0 +1,9 @@
+<div player-data></div>
+
+<form ng-submit="player.$save()">
+    <input type="text" ng-model="player.name" placeholder="Name"/>
+    <input type="text" ng-model="player.position" placeholder="Position"/>
+    <input type="submit" />
+</form>
+
+<button ng-click="removePlayer()">Remove me!</button>

@@ -1,0 +1,20 @@
+<button ng-click="auth.simpleLogin.$login('twitter')" ng-show="!auth.simpleLogin.user">Login</button>
+<button ng-click="auth.simpleLogin.$logout()" ng-show="auth.simpleLogin.user">Logout</button>
+Welcome, {{auth.simpleLogin.user.displayName}}
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Team</th>
+			<th>Wins</th>
+			<th>Losses</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(name, team) in teams">
+			<td>
+            <a ng-href="#/view/{{name}}">{{team.location}} {{team.tname}}</td></a>
+			<td>{{team.wins}}</td>
+			<td>{{team.losses}}</td>
+		</tr>
+	</tbody>
+</table>

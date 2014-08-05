@@ -1,0 +1,10 @@
+Hello admin!
+
+<div ng-repeat="user in users">
+    {{user.details.displayName}}
+    <input type="checkbox" ng-model="user.privledges.addPlayer" />
+    <input type="checkbox" ng-model="user.privledges.editPlayer" />
+    <input type="checkbox" ng-model="user.privledges.removePlayer" />
+    <input type="checkbox" ng-model="user.privledges.administrator" />
+    <button ng-click="setTest()">Test</button>
+</div>
